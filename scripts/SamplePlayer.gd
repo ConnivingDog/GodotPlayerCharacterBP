@@ -20,5 +20,6 @@ func _physics_process(delta):
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_up"):
 			motion.y = -400
-		
-	move_and_slide(motion,UP)
+	
+	#resets motion when collides
+	motion = move_and_slide(motion,UP)
