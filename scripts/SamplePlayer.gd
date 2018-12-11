@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+#floor normal (up direction) default value
+const UP = Vector2(0,-1)
+
 var motion = Vector2()
 
 func _physics_process(delta):
@@ -13,5 +16,9 @@ func _physics_process(delta):
 		motion.x = -100
 	else:
 		motion.x = 0
+	
+	if is_on_floor():
+		if Input.is_action_just_pressed("ui_up"):
+			motion.y = -400
 		
-	move_and_slide(motion)
+	move_and_slide(motion,UP)
