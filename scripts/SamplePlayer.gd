@@ -4,6 +4,9 @@ var motion = Vector2()
 
 func _physics_process(delta):
 	
+	motion.y += 10
+	
+	#check project settings for keys associated with the ff actions
 	if Input.is_action_pressed("ui_right"):
 		motion.x = 100
 	elif Input.is_action_pressed("ui_left"):
